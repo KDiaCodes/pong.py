@@ -6,3 +6,12 @@ class Table:
     self.width = width
     self.height = height
     self.colour = colour
+    
+    self.canvas = Canvas(window, bg=self.colour, height=self.height, width=self.width)
+    self.canvas.pack()
+    
+    if(vertical_net) :
+      self.canvas.create_line(self.width/2, 0, self.width/2, self.height, width=2, fill=net_colour, dash= (15, 23))
+      
+    if(horizontal_net) :
+      self.canvas.create_line(0, self.height/2, self.width, self.height/2, width=2, fill=net_colour, dash= (15, 23))
